@@ -31,8 +31,7 @@ mv pretrain.pth ./pretrain/
 The second stage is the training and inference stage, **datasets** can be downloaded from this [link](https://drive.google.com/file/d/1u9Ne2fqSzzeQ1Nd24DeEeWUxyFddhexW/view?usp=sharing). Then run follow script to place the data files into the `data` directory.
 ```bash
 mkdir data
-mv train_data.zip ./data/
-unzip train_data.zip
+unzip -d ./data train_data.zip
 ```
 
 ### TPC-H dataset
@@ -66,7 +65,12 @@ The Hologres dataset uses the same code as the public datasets. However, since i
 
 #### Pre-train
 
-If you need to pre-train from scratch, you can execute the following method. Please download the pre-training data from this [link](https://drive.google.com/file/d/1ZkVLYl9gV5GnkD_Uv3G3a9VA-WrgRNhT/view?usp=drive_link), place it in the `./pretrain/` directory, and execute the following script. The checkpoint will be saved in the `./pretrain/save` directory.
+If you need to pre-train from scratch, you can execute the following method. Please download the pre-training data from this [link](https://drive.google.com/file/d/1ZkVLYl9gV5GnkD_Uv3G3a9VA-WrgRNhT/view?usp=drive_link). Then run follow script to place the data files into the `./pretrain/` directory. 
+```bash
+mv pretrain_data.pkl ./pretrain/
+```
+
+Execute the following script and the checkpoint will be saved in the `./pretrain/save` directory.
 ```bash
 python pretrain/pretrain.py
 ```
