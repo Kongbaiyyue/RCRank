@@ -13,7 +13,7 @@ git lfs install
 git clone https://huggingface.co/google-bert/bert-base-uncased
 ```
 
-The project dependencies can be installed by executing the following commands in the root of the repository:
+The project dependencies can be installed by executing the following script in the root of the repository:
 ```bash
 conda create --name RCRank python=3.9
 conda activate RCRank
@@ -23,7 +23,10 @@ pip install -r requirements.txt
 ## Run
 
 Our method is divided into two stages. The first stage is the pre-training stage. For convenience, we provide **pre-trained checkpoint**, which can be downloaded via this [link](https://drive.google.com/file/d/1ar52Ih9ADbB4TX2NXE4PNfi4HdFfyv-t/view?usp=drive_link).
-After downloading the **pre-trained checkpoint**, you can place it in the `./pretrain/` directory.
+After downloading the **pre-trained checkpoint**, you can run the following script to place the pre-trained checkpoint in the `./pretrain/` directory.
+```bash
+mv pretrain.pth ./pretrain/
+```
 
 The second stage is the training and inference stage, **datasets** can be downloaded from this [link](https://drive.google.com/file/d/1u9Ne2fqSzzeQ1Nd24DeEeWUxyFddhexW/view?usp=sharing). Then run follow script to place the data files into the `data` directory.
 ```bash
